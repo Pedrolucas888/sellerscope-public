@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade — SellerScope TK</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    max-width: 720px; margin: 0 auto; padding: 48px 24px;
+    line-height: 1.65; color: #1a1a1a; background: #fafafa;
+  }
+  h1 { font-size: 32px; margin-bottom: 8px; }
+  h2 { font-size: 20px; margin-top: 36px; color: #0f766e; }
+  .updated { color: #666; font-size: 14px; margin-bottom: 32px; }
+  a { color: #0f766e; }
+  code { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+  ul { padding-left: 20px; }
+  li { margin: 6px 0; }
+  .destaque {
+    background: #ecfdf5; border-left: 4px solid #0f766e;
+    padding: 16px 20px; margin: 24px 0; border-radius: 0 6px 6px 0;
+  }
+  .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #ddd; color: #666; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>Política de Privacidade</h1>
+<!-- A DATA É PARTE DO TEXTO: mudou qualquer afirmação abaixo, mude a data aqui.
+     Ela ficou em 13/09 enquanto a política ganhava a seção da conta (15/09) e os
+     dois contadores (18/09) — documento publicado mentindo sobre a própria idade.
+     Nenhum teste pega isto: data correta não se deduz do arquivo. -->
+<p class="updated">SellerScope TK — última atualização: 18 de setembro de 2026</p>
+
+<p>
+  Esta política descreve quais dados a extensão SellerScope TK ("a extensão") guarda,
+  onde eles ficam e o que você pode fazer com eles. Ela vale para a versão 1.0.0.
+</p>
+
+<div class="destaque">
+  <strong>O resumo:</strong> tudo que a extensão guarda fica no seu navegador, e some
+  quando você desinstala. A única coisa que sai dele é a <strong>medição
+  compartilhada</strong> (seção 5): o número de um produto e o total vendido que a
+  própria página do TikTok mostrou — nada sobre você. Desligar a extensão, no
+  ícone da barra do Chrome, desliga isso também.
+</div>
+
+<h2>1. O que a extensão guarda</h2>
+<p>Tudo abaixo fica exclusivamente no seu navegador, via <code>chrome.storage.local</code>:</p>
+<ul>
+  <li><strong>Rastreados:</strong> os produtos que você escolheu acompanhar.</li>
+  <li><strong>Histórico de medição:</strong> para cada produto que você visitou, o
+      total vendido e o preço no momento da visita, com a data e hora. É isso que
+      permite calcular o ritmo de vendas — sem duas leituras espaçadas do mesmo
+      produto, esse número não existe.</li>
+  <li><strong>Quais produtos você visitou e quando</strong> (<code>firstSeen</code>).
+      Dizemos isso de forma explícita porque é, na prática, um histórico de
+      navegação dentro do TikTok Shop.</li>
+  <li><strong>Catálogo de diagnóstico:</strong> os endereços dos endpoints do
+      TikTok que a sua navegação acionou, com os nomes dos campos que eles
+      devolvem. Serve para consertar a extensão quando o TikTok muda o formato
+      dos dados. Não guarda conteúdo de produto nem nada seu.</li>
+  <li><strong>Preferências:</strong> configurações, posição dos painéis e se você
+      já viu a apresentação inicial.</li>
+  <li><strong>Sua sessão da conta SellerScope</strong> (os tokens que o login
+      devolve) e o <strong>último veredito da assinatura</strong>. Ficam no seu
+      navegador para você não precisar entrar a cada página, e saem quando você
+      clica em "Sair" ou desinstala a extensão. Eles NÃO entram no arquivo de
+      "exportar meus dados": um token dentro de um arquivo que você guarda no
+      e-mail é a chave da sua conta publicada.</li>
+</ul>
+
+<h2>2. O que a extensão NÃO faz</h2>
+<ul>
+  <li>Não há telemetria, analytics, rastreamento nem "ping de instalação". O que sai
+      do navegador é só o necessário para duas coisas, e as duas estão descritas
+      aqui: entrar na sua conta e conferir a assinatura (seção 4), e a medição
+      compartilhada (seção 5), que fala de produtos e não de pessoas.</li>
+  <li>Não coleta seu telefone, CPF nem dado de pagamento. O e-mail e a senha da
+      CONTA SELLERSCOPE são digitados por você para entrar, e vão só ao provedor
+      de autenticação (seção 4) — nunca à página do TikTok.</li>
+  <li>Não lê sua conta do TikTok, seus cookies, suas credenciais nem suas mensagens.</li>
+  <li>Não observa sua navegação fora do TikTok Shop. A extensão só é carregada em
+      <code>shop.tiktok.com</code> e nas rotas do Shop em <code>www.tiktok.com</code>
+      (<code>/shop/</code> e <code>/view/product/</code>) — em qualquer outro site
+      ela sequer é executada. Se você sair do Shop para o feed por dentro do site,
+      sem recarregar a página, ela fica inativa: some da tela e não lê nem guarda
+      nada até você voltar a uma página do Shop.</li>
+  <li>Não vende, aluga nem compartilha informação sobre você com ninguém.</li>
+  <li>Não usa nada disso para publicidade.</li>
+</ul>
+
+<h2>3. De onde vêm os dados que a extensão mostra</h2>
+<p>
+  A extensão lê o que a própria página do TikTok Shop já carregou — as informações
+  públicas do produto que aparecem na tela (preço, total vendido, nota, avaliações,
+  variações e o vídeo vinculado). Ela faz isso de forma <strong>passiva</strong>:
+  não dispara requisições próprias ao TikTok, não automatiza cliques e não contorna
+  nenhuma proteção do TikTok. O cálculo — faturamento estimado, ritmo de vendas,
+  precificação — acontece dentro do seu navegador; a exceção é o ritmo que vem da
+  medição compartilhada (seção 5), calculado no servidor com a mesma regra.
+</p>
+
+<h2>4. Conta SellerScope e assinatura</h2>
+<p>
+  A extensão exige uma conta SellerScope com assinatura que inclua o TikTok Shop.
+  O <strong>cadastro é feito no site</strong> (sellerscope.com.br) — a extensão
+  não cria conta.
+</p>
+<ul>
+  <li><strong>O que sai daqui:</strong> o e-mail e a senha que você digita na tela
+      de entrar, enviados ao nosso provedor de autenticação (Supabase, GoTrue)
+      para validar o login; e, depois, o token da sessão, nas consultas que
+      perguntam se a assinatura está em dia.</li>
+  <li><strong>Onde você digita:</strong> num documento da própria extensão, dentro
+      de um quadro isolado. A página do TikTok não alcança esse campo — é por isso
+      que o formulário não é montado no meio dela.</li>
+  <li><strong>A senha do TikTok não é pedida em lugar nenhum</strong>, e a extensão
+      não lê a sua conta do TikTok.</li>
+  <li><strong>O que a consulta traz de volta:</strong> o estado da assinatura
+      (ativa, em teste, vencida…), o código do plano e até quando ele vale. O
+      resultado fica guardado neste navegador por até 24 horas para a extensão não
+      perguntar a cada página.</li>
+  <li><strong>Sair:</strong> pelo botão "Sair" dentro da extensão. Ele apaga a
+      sessão e o veredito guardados aqui.</li>
+</ul>
+
+<h2>5. Medição compartilhada</h2>
+<p>
+  O ritmo de vendas (vendas por dia) só existe comparando duas leituras do total
+  vendido de um produto, feitas em momentos diferentes — o TikTok não informa esse
+  número. Sozinha, a extensão precisa que você volte ao mesmo produto. Com a
+  medição compartilhada ligada, as leituras de todos os usuários se somam: quem abre
+  um produto que outra pessoa já leu vê o ritmo na primeira visita.
+</p>
+<ul>
+  <li><strong>O que é enviado:</strong> o número do produto no TikTok Shop e o total
+      vendido que a página mostrou naquele momento. Só o total exato; faixas como
+      "1,2 mil" não vão. A extensão não reenvia o produto que já mandou na última
+      hora, e o servidor guarda no máximo uma leitura por hora de cada produto.</li>
+  <li><strong>São dois contadores, guardados separados:</strong> o TikTok mostra
+      um total nas listas de produtos (<em>o total da grade</em>) e outro na
+      página do produto (<em>o total da página</em>), e eles podem não ser
+      iguais. Cada um vai para a sua própria série, aqui e no servidor — juntar
+      os dois faria a ferramenta contar vendas que não aconteceram. O que é
+      enviado continua sendo só o número do produto e o total.</li>
+  <li><strong>O que NÃO é enviado:</strong> seu nome, seus cookies, a sua lista de
+      produtos, os produtos rastreados ou as suas preferências.</li>
+  <li><strong>O que acompanha o pedido:</strong> o token da sua sessão, porque o
+      servidor só atende quem tem assinatura em dia. Ele identifica a conta para
+      autorizar o acesso; a LEITURA em si continua guardada sem vínculo com
+      você — o servidor não registra quem mandou cada número.</li>
+  <li><strong>O que volta:</strong> as vendas por dia calculadas com as leituras de
+      todos os usuários, para os produtos da página que não têm um ritmo recente
+      medido no seu navegador.</li>
+  <li><strong>Para onde vai:</strong> o servidor da SellerScope TK
+      (<code>sellerscope-tk-medicao</code>), hospedado na Cloudflare. Como em qualquer
+      acesso à internet, o endereço IP da conexão chega à Cloudflare. O servidor o
+      usa só na hora, para contar quantos envios chegam por minuto e barrar abuso;
+      ele não é guardado nem associado às leituras.</li>
+  <li><strong>Por quanto tempo:</strong> as leituras de um produto ficam no servidor
+      enquanto alguém continuar lendo aquele produto, e são apagadas 45 dias depois
+      da última leitura.</li>
+  <li><strong>Como desligar:</strong> pelo interruptor da extensão, no ícone dela na
+      barra do Chrome. Desligada, a extensão não envia nem pede nada — nem lê a
+      página. Desinstalar também encerra o envio. Enquanto o servidor não estiver
+      configurado na versão instalada, nada é enviado.</li>
+</ul>
+
+<h2>6. Permissões pedidas, e por quê</h2>
+<ul>
+  <li><code>storage</code> — guardar localmente os produtos rastreados, o histórico de medição
+      e suas preferências. É o que permite comparar a visita de hoje com a de ontem.</li>
+  <li><code>downloads</code> — salvar no seu computador arquivos que você pede
+      explicitamente: a imagem ou a capa do vídeo de um produto, e a exportação
+      dos seus próprios dados. Os downloads são restritos a uma lista fechada de
+      servidores de mídia do TikTok.</li>
+  <li><code>host_permissions</code> em <code>shop.tiktok.com</code>, nas rotas do
+      Shop em <code>www.tiktok.com</code> (<code>/shop/</code> e
+      <code>/view/product/</code>) e no endereço do nosso provedor de
+      autenticação — as duas primeiras são onde o TikTok Shop Brasil vive; a
+      terceira é para onde vai o login e a conferência da assinatura (seção 4). A
+      extensão não pede acesso a nenhum outro site.</li>
+  <li><code>scripting</code> — ativar a extensão quando você entra no Shop por
+      dentro do site do TikTok (clicando em "Shop" no feed, por exemplo), caso em
+      que a página não recarrega e o navegador não a carregaria sozinho. Ela só é
+      ativada nas mesmas rotas do Shop acima, e o que roda é o próprio código do
+      pacote instalado.</li>
+</ul>
+<p>
+  A extensão não usa <code>webRequest</code>, não injeta código remoto e não executa
+  nada que não esteja dentro do pacote instalado.
+</p>
+
+<h2>7. Seus dados são seus</h2>
+<p>
+  Tudo que a extensão guarda — produtos rastreados, histórico de medição, produtos
+  visitados, o catálogo de diagnóstico e as suas preferências — fica no
+  armazenamento local do seu navegador, e em nenhum outro lugar. As leituras da
+  medição compartilhada (seção 5) ficam no servidor, ligadas ao produto, e não a
+  você.
+</p>
+<p>
+  Desinstalar a extensão remove todos esses dados automaticamente. O que foi para
+  a medição compartilhada não tem como ser ligado a você, e sai do servidor 45
+  dias depois da última leitura do produto.
+</p>
+<p>
+  A Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018) garante a você acesso,
+  correção, portabilidade e eliminação dos seus dados. O que fica no seu navegador
+  se elimina desinstalando a extensão; para qualquer outro pedido sobre esses
+  direitos, escreva para o contato abaixo.
+</p>
+
+<h2>8. Se isso mudar</h2>
+<p>
+  Se uma versão futura passar a enviar mais alguma coisa para fora do seu navegador,
+  esta política será atualizada <strong>antes</strong> do lançamento dessa versão,
+  dizendo exatamente o que passa a sair da máquina e para onde. Foi o que
+  aconteceu com a conta e a assinatura (seção 4), que entraram nesta versão.
+  Enquanto o texto acima estiver publicado, ele descreve o comportamento real da
+  versão que está na Chrome Web Store.
+</p>
+
+<h2>9. Contato</h2>
+<p>
+  Dúvidas ou solicitações sobre esta política:
+  <a href="mailto:lucas21sarmento@gmail.com">lucas21sarmento@gmail.com</a>
+</p>
+
+<p class="footer">
+  SellerScope TK é uma ferramenta independente de análise. Não é afiliada,
+  patrocinada nem endossada pelo TikTok, pela TikTok Shop ou pela ByteDance.
+  Todas as marcas citadas pertencem aos seus respectivos donos.
+</p>
+
+</body>
+</html>
