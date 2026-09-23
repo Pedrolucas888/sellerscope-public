@@ -70,10 +70,17 @@
 </ul>
 
 <h2>2. O que sai do seu navegador</h2>
-<p>Apenas estas duas coisas:</p>
+<p>Apenas estas três coisas:</p>
 <ul>
   <li><strong>Login:</strong> o e-mail e a senha que você digita para entrar, enviados ao nosso provedor de autenticação. Depois disso, o token da sua sessão acompanha as consultas, para o servidor saber que a sua assinatura está em dia.</li>
   <li><strong>Leitura de produto:</strong> o número de um produto do TikTok Shop, o total de vendas que a página dele exibia e o momento em que foi lido — inclusive leituras de visitas anteriores, que ficaram guardadas no seu navegador. É informação pública da página, não sua.</li>
+      <li><strong>Geração de título e descrição:</strong> só quando você clica em
+      <em>Gerar</em>. São enviados apenas os dados <strong>públicos</strong> do produto
+      aberto — título, preço, total vendido, nota, número de avaliações e os nomes das
+      variações —, e um serviço de inteligência artificial escreve o texto a partir
+      deles. A lista é fechada: nada além disso é enviado, e nada do que identifica
+      você acompanha. O texto é sugestão para você revisar, não conferência do
+      produto.</li>
 </ul>
 <p>
   Não há telemetria, analytics nem rastreamento, e nada do que é enviado diz quem
@@ -86,7 +93,10 @@
   <li>Não acessa a sua conta do TikTok e não faz nada em seu nome.</li>
   <li>Não funciona fora do TikTok Shop: ela só é carregada em <code>shop.tiktok.com</code> e nas rotas do Shop em <code>www.tiktok.com</code>. Em qualquer outro site, não é executada.</li>
   <li>Não coleta telefone, CPF nem dado de pagamento.</li>
-  <li>Não vende, aluga nem compartilha informação com terceiros, e não usa nada para publicidade.</li>
+  <li>Não vende nem aluga informação, e não usa nada para publicidade. O único
+      terceiro que recebe alguma coisa é o serviço de inteligência artificial que
+      escreve o texto, e só quando você pede uma geração: os dados públicos do
+      produto aberto, nunca os seus.</li>
 </ul>
 
 <h2>4. Conta SellerScope e assinatura</h2>
@@ -112,7 +122,7 @@
   <li><strong>O que é enviado:</strong> o número do produto e o total de vendas exibido na página, com o momento da leitura — incluindo leituras de visitas anteriores guardadas no seu navegador.</li>
   <li><strong>O que não é enviado:</strong> seu nome, seus cookies, suas preferências, a sua lista de produtos rastreados ou qualquer coisa que ligue as leituras a você.</li>
   <li><strong>O que acompanha o pedido:</strong> o token da sua sessão, porque o servidor só atende quem tem assinatura em dia. A leitura fica guardada sem vínculo com você.</li>
-  <li><strong>Para onde vai:</strong> o nosso servidor, hospedado na Cloudflare. O endereço IP da conexão chega lá, como em qualquer acesso à internet, e serve só para barrar abuso — não é guardado junto com a leitura.</li>
+  <li><strong>Para onde vai:</strong> o nosso servidor. O endereço IP da conexão chega lá, como em qualquer acesso à internet, e serve só para barrar abuso — não é guardado junto com a leitura.</li>
   <li><strong>Por quanto tempo:</strong> as leituras de um produto são apagadas 45 dias depois da última leitura dele.</li>
   <li><strong>Como desligar:</strong> pelo interruptor da extensão, no ícone dela na barra do Chrome. Desligada, ela não envia nem pede nada. Desinstalar também encerra o envio.</li>
 </ul>
@@ -151,7 +161,7 @@
 <h2>9. Contato</h2>
 <p>
   Dúvidas ou solicitações sobre esta política:
-  <a href="mailto:lucas21sarmento@gmail.com">lucas21sarmento@gmail.com</a>
+  <a href="mailto:contatosellerscope@gmail.com">contatosellerscope@gmail.com</a>
 </p>
 
 <div class="footer">
